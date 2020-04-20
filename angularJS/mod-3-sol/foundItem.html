@@ -1,0 +1,6 @@
+		<ul>
+        <li ng-repeat="item in narrow.items">
+          {{ item.name }}, <br>{{ item.shortName}},<br> {{item.description}}
+        <button ng-click="narrow.onRemove({index: $index});">Remove item</button>
+        </li><br>
+      </ul>

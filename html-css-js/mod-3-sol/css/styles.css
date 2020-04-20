@@ -1,0 +1,75 @@
+/*** BASE STYLES ***/
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #202C39;
+   font-family: 'Noto Sans', sans-serif;
+}
+/*** HEADER ***/
+.navbar-custom {
+	background-color: #CDE6F5;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+
+}
+.navbar-custom .navbar-brand {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	font-size: 30px;
+	margin-left: 7px;
+}
+.navbar-custom .navbar-toggler{
+	border: 1px solid #202C39;
+	float: right;
+	margin-bottom: 7px;
+	margin-right: 7px;
+}
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(32, 44, 57, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); 
+}
+
+#navbarContent{
+	background-color: #312F2F;
+	text-align: center;
+	width: 100%;
+}	
+#navbarContent a{
+	border: .5px solid black;
+	font-size: 20px;
+	color: white;
+}
+
+#navbarContent a:hover{
+	font-size: 25px;
+}
+/*** MAIN PAGE ***/
+#heading-page{
+	font-size: 30px;
+	font-weight: 800;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+#main-page > h3{
+	font-size: 155%;
+
+}
+.item-card {
+	background-color: #F7F9F9;
+	border: 1px solid black;
+	padding: 10px;
+	margin-bottom: 25px;
+	box-shadow: 5px 5px solid white;
+	min-height: 500px;
+}
+.item-card:nth-child(4n) {
+	margin-bottom: 50px;
+}
+.item-card a:hover{
+	text-decoration: none;
+}
