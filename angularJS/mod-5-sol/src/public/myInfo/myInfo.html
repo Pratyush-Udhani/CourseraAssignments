@@ -1,0 +1,48 @@
+<h2 class="text-center">My Profile</h2>
+
+<div class="container" ng-if="infoCtrl.present">
+	<form id="profileForm">
+		<h3 class="text-center">Profile Page</h3><hr>
+		<div class="form-group row">
+			<label class="col-form-label">Name:</label>
+			<span class="info">{{ infoCtrl.pref.name }}</span>
+		</div><hr>
+
+		<div class="form-group row">
+			<label class="col-form-label">Email:</label>
+			<span class="info">{{ infoCtrl.pref.email }}</span>
+		</div><hr>
+
+		<div class="form-group row">
+			<label class="col-form-label">Phone Number:</label>
+			<span class="info">{{ infoCtrl.pref.phone }}</span>
+		</div><hr>
+
+		<div class="form-group row">
+				<div class="col-sm-6">
+					<label class="col-form-labelFav">Favourite dish: </label>
+				</div>
+ 	
+			 	<div class="col-sm-6">
+				    <div class="col-sm-5">
+				      <div class="menu-item-photo">
+				        <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.pref.dish.short_name}}.jpg" alt="{{infoCtrl.pref.dish.name}}">
+				      </div>
+				      <div class="menu-item-price">{{infoCtrl.pref.dish.price_small | currency}}<span> {{infoCtrl.pref.dish.small_portion_name}}</span> {{infoCtrl.pref.dish.price_large | currency}} <span>{{infoCtrl.pref.dish.large_portion_name}}</span></div>
+				    </div>
+				    <div class="menu-item-description col-sm-7">
+				      <h3 class="menu-item-title">{{infoCtrl.pref.dish.name}}</h3>
+				      <p class="menu-item-details">{{infoCtrl.pref.dish.description}}</p>
+				    </div>
+				 </div>
+
+		</div>
+
+	</form>
+</div>
+
+
+<div class="container" ng-if="!infoCtrl.present">
+	<h2 class="text-center">Not signed in.</h2>
+	<div class="text-center">Sign up <a ui-sref="public.signUp">here</a></div>
+</div>

@@ -1,0 +1,62 @@
+<h2 class="text-center">Sign Up page</h2>
+<div class="text-center">Register for the retaurant newsletter</div>
+
+<form id="signUpForm" name="signUpForm" novalidate>
+
+	<h3 class="text-center">Registration</h3>
+	<div class="form-group">
+		<label>First Name</label>
+		<input type="text" name="firstName" class="form-control" placeholder="Enter First Name"
+				ng-model="regCtrl.firstName"
+				required>
+		<small class="form-text text-muted"
+				ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched">
+			Please enter first name</small>
+	</div>
+
+	<div class="form-group">
+		<label>Last Name</label>
+		<input type="text" name="lastName" class="form-control" placeholder="Enter Last Name"
+				ng-model="regCtrl.lastName"
+				required>
+		<small class="form-text text-muted"
+				ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched">
+			Please enter last name</small>
+	</div>
+
+	<div class="form-group">
+		<label>Email Address</label>
+		<input type="email" name="email" class="form-control" placeholder="Enter Email Address"
+				ng-model="regCtrl.email"
+				required>
+		<small class="form-text text-muted"
+				ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+			Must be a valid email format: name@domain format</small>
+	</div>
+
+	<div class="form-group">
+		<label>Phone Number (#####-#####)</label>
+		<input type="text" name="phone" class="form-control" placeholder="Enter Phone Number"
+				ng-model="regCtrl.phone" 
+				pattern="(\d{5})-(\d{5})"
+				required>
+		<small class="form-text text-muted"
+				ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+			Must be a valid phone number format: #####-##### format</small>
+	</div>
+
+	<div class="form-group">
+		<label>Favourite Dish</label>
+		<input type="text" name="dish" class="form-control" placeholder="Enter Menu number for favourite dish"
+				ng-model="regCtrl.dish" id="novalidate">
+		<small class="form-text text-muted" ng-if="regCtrl.empty"> Plese enter a menu number</small>
+		
+	</div>
+		<span class="form-text text-muted" ng-if="regCtrl.invalid"> Invalid menu category</span>		
+	<div>
+	<button class="btn"
+			ng-disabled="signUpForm.$invalid"
+			ng-click="regCtrl.submit()"adfh>Submit</button>
+	</div>
+	<span class="text-center" ng-if="regCtrl.saved">Everything is saved.</span>
+</form>
